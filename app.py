@@ -7,8 +7,8 @@ def predict():
     if request.method == 'POST':
       if 'file' not in request.files:
         return 'No file sent.'
-      # predict_results('globe_thistle.jpg')
-      return "Got File."
+      return predict_results(request.files["file"])
+      
 
 @app.route('/', methods=['GET'])
 def index():
