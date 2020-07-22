@@ -1,19 +1,18 @@
 {% extends 'base.html' %}
 
 {%block content %}
-<section id="upload-form">
-  <h1>Upload Flower Image</h1>
-  <form>
-    <div class="form-row">
-      <div class="col">
-        <label for="exampleFormControlFile1">Example file input</label>
-        <input type="file" class="form-control-file" id="exampleFormControlFile1">
-      </div>
-      <div class="col">
-        <button type="submit" class="btn btn-primary">Predict!</button>
-      </div>
+<section id="upload-form" class="container ml-auto mt-5 w-75">
+  <h2 class="text-center">Upload Flower Image</h2>
+  <form class="d-flex justify-content-center mt-4" method="POST" action="/predict" enctype="multipart/form-data">
+    <div class="form-group">
+      <label for="formControlFile">Flower Image</label>
+      <input type="file" class="form-control-file" id="formControlFile">
+    </div>
+    <div class="form-group d-flex align-items-end">
+      <button type="submit" class="btn-lg btn-primary">Predict!</button>
+    </div>
 
-      </div>
+
   </form>
 </section>
 {%endblock %}
