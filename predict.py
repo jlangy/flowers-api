@@ -48,10 +48,7 @@ def predict(image_path, model, topk=3):
 def predict_results(image):
     probs, classes = predict(image, model, 3)
     name_classes = list(map(lambda x: cat_to_name[x], classes))
-    results = {}
-    for i in range(3):
-      results[i] = {"name": name_classes[i], "prob": str(probs[i])}
-    return results
+    return [name_classes[0:3], probs[0:3]]
     
     # print(' Predicted species is {} with {:.2f}% confidence. \n '.format(name_classes[0], probs[0]*100))
     # for num in range(1,3):

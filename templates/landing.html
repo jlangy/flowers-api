@@ -1,19 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Flowers</title>
-</head>
-<body>
-  <h1>FLOWERS</h1>
-  <main>
-    <h1>Upload Flower Image</h1>
-    <form action="/predict" method=post enctype=multipart/form-data>
-      <p><input type=file name=file>
-         <input type=submit value=Upload>
-    </form>
-  </main>
+{% extends 'base.html' %}
 
-</body>
-</html>
+{%block content %}
+<section id="upload-form">
+  <h1>Upload Flower Image</h1>
+  <form>
+    <div class="form-row">
+      <div class="col">
+        <label for="exampleFormControlFile1">Example file input</label>
+        <input type="file" class="form-control-file" id="exampleFormControlFile1">
+      </div>
+      <div class="col">
+        <button type="submit" class="btn btn-primary">Predict!</button>
+      </div>
+
+      </div>
+  </form>
+</section>
+{%endblock %}
