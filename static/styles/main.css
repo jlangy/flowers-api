@@ -9,3 +9,7 @@ body {
   background-color: rgb(230, 230, 230) !important;
   box-shadow: 2px 2px rgb(184, 184, 184);
 }
+#upload-file-button {
+  width: 110px;
+  height: 55px;
+}
