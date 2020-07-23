@@ -9,7 +9,6 @@ from validate import validation
 from torch import nn, optim
 from network import make_network
 
-print('hi')
 
 data_transforms = transforms.Compose([transforms.Resize(256), transforms.CenterCrop(224), transforms.ToTensor(), transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])])   
 #Import pretrained model
