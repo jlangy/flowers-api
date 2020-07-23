@@ -24,8 +24,6 @@ model = make_network(checkpoint['arch'], checkpoint['hidden_units'])
 model.load_state_dict(checkpoint['model_state_dict'])
 class_to_idx = checkpoint['class_to_idx']
 
-print('hi')
-
 def process_image(image):
     image = Image.open(image)
     image = data_transforms(image)
@@ -46,10 +44,10 @@ def predict(image_path, model, topk=3):
     return probs, classes
 
 def predict_results(image):
-    probs, classes = predict(image, model, 3)
+    probs, classes = predict(image, model, 10)
     name_classes = list(map(lambda x: cat_to_name[x], classes))
     results = []
-    for i in range(3):
+    for i in range(10):
       results.append({"name": name_classes[i], "prob": str(round(float(probs[i]) * 100, 2))})
     return results
     
