@@ -12,6 +12,21 @@
 	  {% endif %}
 	{% endwith %}
 <hr>
+<section>
+  <p class="d-1">
+    This is a machine learning algorithm built to identify the species of uploaded flower images.
+    To use, upload an image of a flower from your computer using the browse button, and click
+    predict to see the algorithm's predictions. You will be able to 
+    see the top predictions along with the relative weight of each prediction as a percentage.
+  </p>
+  <p>
+    This algorithm was trained on a dataset of a few thousand images containing the species listed below, and will
+    not recognize other species. It was built using pytorch, and the training implementation 
+    can be seen <a href="https://github.com/jlangy/flowers">here</a>. For best results,
+    use images with the flower centered and taking up the majority of the picture. 
+  </p>
+  </ul>
+</section>
 <section id="upload-form" class="container ml-auto mt-5 w-75">
   <h2 class="text-center">Upload Flower Image</h2>
   <form class="d-flex justify-content-center mt-4" method="POST" action="{{ url_for('predict') }}" enctype="multipart/form-data">
@@ -23,27 +38,13 @@
       <button type="submit" class="btn-lg btn-primary" id="upload-file-button">Predict!</button>
     </div>
   </form>
-</section>
 <hr>
-<section>
-  <h2 class="text-center">About</h2>
-  <p>
-    This is a machine learning algorithm built to identify the species of uploaded flower images.
-    To use, upload an image of a flower from your computer using the browse button, and click
-    predict to see the algorithm's predictions. You will be able to 
-    see the top predictions along with the confidence of each prediction as a percentage.
-  </p>
-  <p>
-    This algorithm was trained on a dataset containing the species listed below, and will
-    not recognize other species. It was built using pytorch, and the training implementation 
-    can be seen <a href="https://github.com/jlangy/flowers">here</a>. 
-  </p>
-  <ul class="list-group d-flex flex-wrap flex-row">
+
+  <h2 class="text-center m-4">Recognizable Flower Species</h2>
+  <ul class="list-group d-flex flex-wrap flex-row justify-content-center">
     {% for name in flowers: %}
     <li class="list-group-item flex-shrink-1 m-2">{{ name }}</li>
   {% endfor %}
-  </ul>
-
 </section>
 
 <script type = "text/javascript" 
