@@ -24,7 +24,7 @@ model.load_state_dict(checkpoint['model_state_dict'])
 class_to_idx = checkpoint['class_to_idx']
 
 def process_image(image):
-    image = Image.open(image)
+    image = Image.open(image).convert("RGB")
     image = data_transforms(image)
     return image.numpy()
 

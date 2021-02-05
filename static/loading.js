@@ -18,3 +18,7 @@ window.onload = function(){
   }
 }
 
+window.addEventListener('unload', function(event) {
+  document.getElementById('upload-file-button').innerHTML = "Predict!";
+});
+

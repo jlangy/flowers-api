@@ -13,6 +13,7 @@ app.secret_key = environ.get('secret')
 ALLOWED_EXTENSIONS = ['bmp', 'eps', 'jpg', 'gif', 'icns', 'ico','im', 'jpeg','msp','pcx','png','ppm','pgi','tiff','webp','xbm',
 'blp', 'cur','dcx', 'fli', 'fpx', 'ftex','gbr','gd','imt','iptc','naa','mcidas','mic','mpo','pcd','pixar','psd','tga','wal','xpm']
 
+#open mapping file species_number => species_name
 with open('cat_to_name.json', 'r') as f:
     flowers_map = json.load(f)
 
