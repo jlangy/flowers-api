@@ -38,3 +38,5 @@ def predict():
 @app.route('/', methods=['GET'])
 def index():
     return render_template('landing.html', flowers=flowers)
+
+app.run(host='0.0.0.0', port=80, debug=True, threaded=True)
